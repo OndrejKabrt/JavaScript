@@ -39,7 +39,7 @@ rokV;
     }
 
     obrazInfo(){
-        return`${this.autor} - ${this. nazev}- ${this.cena} - ${this.rokV}`;
+        return`${this.autor.autorInfo()} - ${this. nazev}- ${this.cena} - ${this.rokV}`;
     }
     
     
@@ -77,9 +77,6 @@ autori.forEach(() => {
     countAutoru++;
 });
 
-
-
-
 let celkovaCena = 0;
 obrazy.forEach(element => {
     celkovaCena += element.cena;
@@ -105,7 +102,7 @@ function triNej(){
     
     let jmenoAutora = AnotherAtrist;
     for(let i = 0; i < countAutoru; i ++){
-        if(jmenoAutora == obrazy[i].autor.jmeno()){
+        if(jmenoAutora == obrazy[i].autor.jmeno){
             console.log(obrazy[i].obrazInfo())
         }
     }
@@ -116,8 +113,8 @@ function triNej(){
 //function seznamAutoruADel(autori, obrazy){
 for(let i = 0; i < countAutoru; i++){
     console.log(autori[i].autorInfo())
-    for(let j = 0; i < countObrazu; j++){
-        if(autori[i].jmeno == obrazy[j].autor.jmeno()){
+    for(let j = 0; j < countObrazu; j++){
+        if(autori[i].jmeno == obrazy[j].autor.jmeno){
             console.log(obrazy[j].obrazInfo())
         }
     }
@@ -126,6 +123,29 @@ for(let i = 0; i < countAutoru; i++){
 //seznamAutoruADel(autori,obrazy);
 
 }
+
+document.getElementById("submitButton").addEventListener("click", function(eventArg){
+    eventArg.preventDefault();
+    const jmenoNovehoAutora = document.getElementById(name);
+    const prijmeniNovehoAutora = document.getElementById(sureNameOfAutor);
+
+    const jmenoNovehoObrazu = document.getElementById(nameOfPicture);
+    const cenaNovehoObrazu = document.getElementById(costOfPicture);
+    const rokVytvoreni = document.getElementById(yearOfCreation);
+
+    let newArtist = new Autor(jmenoNovehoAutora ,prijmeniNovehoAutora);
+    let newObraz = new Obraz(newArtist, jmenoNovehoObrazu,cenaNovehoObrazu, rokVytvoreni);
+
+    autori.push(newArtist);
+    obrazy.push(newObraz);
+
+    console.log(autori)
+    console.log(obrazy)
+});
+
+
+
+
 
 
 

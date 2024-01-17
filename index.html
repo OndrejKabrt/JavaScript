@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 id="vypis"> </h1>
+
+    <form id="formID" method="post">
+        <div>
+          <label>Jmeno Autora:</label>
+          <input type="text" id="nameOfAutor" name="jmeno" placeholder="Sem zadejte jmeno Autora"/>
+        </div>
+        <div>
+            <label>Prijmeni Autora:</label>
+            <input type="text" id="sureNameOfAutor" name="prijmeni" placeholder="Sem zadejte prijmeni Autora"/>
+          </div>
+
+        <div>
+            <label>Nazev Obrazu:</label>
+            <input type="text" id="nameOfPicture" name="nazev" placeholder="Sem zadejte jmeno obrazu"/>
+          </div>
+      
+        <div>
+          <label >Cena Obrazu:</label>
+          <input type="text" id="costOfPicture" name="cena" placeholder="Sem zadejte cenu obrazu"/>
+        </div>
+      
+        <div>
+          <label >Rok vytvoreni:</label>
+          <input type="text" id="yearOfCreation" name="year" placeholder="Sem zadejte rok vytvoreni ve formátu DD.MM.YYYY"/>
+        </div>
+      
+        <div class="button">
+          <button type="submit" id="submitButton">Send your message</button>
+        </div>
+      </form>
     
 </body>
 <script src="Classes.js"></script>
